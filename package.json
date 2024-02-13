@@ -1,6 +1,6 @@
 {
   "name": "@ternala/test-package",
-  "version": "0.0.3",
+  "version": "0.0.3-next.0",
   "description": "",
   "scripts": {
     "build": "rollup -c",
