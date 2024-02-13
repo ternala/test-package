@@ -53,6 +53,10 @@ jobs:
           git config user.name "Ternala"
           git config user.email "share.ternala@gmail.com"
 
+      - name: Commit changes
+        run: |
+          git pull
+
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
