@@ -1,0 +1,29 @@
+import pkg from '../package.json'
+import { Meta } from '@storybook/blocks'
+
+<Meta title="How to use" />
+
+# How to use
+
+To add this ui kit to your project you need to add .npmrc file:
+
+```tsx dark
+@ternala:registry=https://npm.pkg.github.com/ternala
+//npm.pkg.github.com/:_authToken={token}
+always-auth=true
+//registry.npmjs.org/:_authToken={token}
+```
+
+Than you need to install ui kit package to your project:
+
+```bash dark
+npm i @ternala/ftn-ui-kit
+```
+
+To use some component inside your react app:
+
+```tsx dark
+import { Select } from '@ternala/ftn-ui-kit';
+...
+<Select {...props} />
+```
