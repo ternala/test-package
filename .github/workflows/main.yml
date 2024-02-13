@@ -70,10 +70,6 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.TOKEN}}
 
-      - name: Check git status
-        run: |
-          git status 
-
       - name: Commit changes
         run: |
           git push
