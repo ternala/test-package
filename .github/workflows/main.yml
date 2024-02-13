@@ -40,29 +40,6 @@ jobs:
           git commit -am "Build"
           git push
 
-  publish:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up Git user information
-        run: |
-          git config user.name "Ternala"
-          git config user.email "share.ternala@gmail.com"
-
-      - name: Commit changes
-        run: |
-          git pull
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 20
-          registry-url: https://npm.pkg.github.com/
-
       - name: Publish
         run: |
           if [[ "${{ github.ref }}" == "refs/heads/stage" ]]; then
