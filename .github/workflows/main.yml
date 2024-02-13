@@ -34,11 +34,10 @@ jobs:
       - name: Build
         run: npm run build
 
-#      - name: Commit changes
-#        run: |
-#          git add .
-#          git commit -am "Build"
-#          git push
+      - name: Commit changes
+        run: |
+          git add .
+          git commit -am "Build"
 
   publish:
     needs: build
@@ -69,6 +68,10 @@ jobs:
           npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.TOKEN}}
+
+      - name: Check git status
+        run: |
+          git status 
 
       - name: Commit changes
         run: |
