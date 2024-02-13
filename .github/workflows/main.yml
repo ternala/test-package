@@ -30,8 +30,10 @@ jobs:
         run: |
           if [[ "${{ github.ref }}" == "refs/heads/stage" ]]; then
             npm version prerelease --preid=next
+            git add . && git commit -am "Upgrade prerelease version"
           else
             npm version patch
+            git add . && git commit -am "Upgrade version"
           fi
           npm publish
         env:
