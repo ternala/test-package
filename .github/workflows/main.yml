@@ -6,13 +6,16 @@ on:
       - stage
       - master
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Git user information
         run: |
@@ -31,6 +34,7 @@ jobs:
       - name: Build
         run: npm run build
 
+      - uses: actions/checkout@v3
       - name: Commit changes
         run: |
           git add . 
@@ -43,7 +47,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Git user information
         run: |
@@ -67,6 +71,7 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.TOKEN}}
 
+      - uses: actions/checkout@v3
       - name: Commit changes
         run: |
           git add . 
