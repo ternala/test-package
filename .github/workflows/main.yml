@@ -76,5 +76,4 @@ jobs:
 
       - name: Commit changes
         run: |
-          git add . 
-          git commit -am "Publish new version"
+          git push
