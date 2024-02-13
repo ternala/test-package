@@ -31,7 +31,7 @@ jobs:
           if [[ "${{ github.ref }}" == "refs/heads/stage" ]]; then
             npm version prerelease --preid=next
           else
-            npm version minor
+            npm version patch
           fi
           npm publish
         env:
